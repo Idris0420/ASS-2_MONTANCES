@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .registerContainer{
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(images/registrationBackground.png);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+        }
+
+        input[type="radio"]:checked + label{
+            background-color: red;
+        }
+
+        nav{
+            background-color: rgba(11, 11, 32, 0.582);
+            height: 7vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            backdrop-filter: blur(100px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="radio"]{
+            display: none;
+        }
+
+        nav label{
+            padding: 20px;
+            font-size: medium;
+        }
+
+        a, .registerLabel, .scheduleLabel{
+            text-decoration: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.2em;
+            font-weight: 100;
+            color: rgb(244, 244, 244);
+        }
+
+        .registerLabel::after{
+            content: "Register";
+        }
+
+        .scheduleLabel::after{
+            content: "Schedule";
+        }
+
+        .registerDiv{
+            background-color: #e24717;
+        }
+
+        .registerDiv, .scheduleDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 75%;
+            width: 5%;
+            margin-left: 5px;
+            margin-right: 5px;
+            transition: all .3s ease-in-out;
+            border-radius: 10px;
+            font-size: 10px;
+        }
+
+        .registerDiv:hover, .scheduleDiv:hover{
+            background-color: #ffa200;
+        }
+
+        .companyMotto {
+            background-color: rgba(90, 90, 90, 0.599);
+            backdrop-filter: blur(2px);
+            min-height: 250px; /* Further reduced height */
+            min-width: 300px;  /* Further reduced width */
+            color: white;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 15px;
+            flex-direction: column;
+            box-shadow: 3px 3px 3px black;
+        }
+
+        .second-container{
+            animation: fadeInUp;
+            animation-duration: 800ms;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #Heading {
+            font-family: Montserrat;
+            font-weight: bolder;
+            font-size: 3em; /* Reduced font size */
+            background: linear-gradient(to right, #e24717, #2b6203);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .companyMotto h3 {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 200;
+            font-size: 1.2em; /* Slightly reduced font size */
+        }
+
+        .input-Container{
+            width: 100%;
+            height: 80%;
+            margin-top: 24px;
+        }
+
+        label {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 1.2em; /* Slightly reduced font size */
+        }
+
+        input {
+            border: none;
+            border-bottom: 1px solid orange;
+            padding-left: 10px;
+            height: 25px; /* Reduced height */
+            width: 400px;  /* Reduced width */
+            font-size: 0.9em; /* Slightly reduced font size */
+            background-color: rgba(255, 0, 0, 0);
+            color: white;
+        }
+
+        input::placeholder{
+            color: white;
+        }
+
+        .inputs{
+            
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        input[type="date"]{
+            font-size: 1em;
+        }
+        
+        input:focus {
+            border-color: #48ff00; /* Border color on focus */
+            outline: none; /* Remove default outline */
+          }
+
+        #submitButton {
+            display: flex;
+            justify-content: center; /* Center the button within the container */
+            margin-top: 30px;
+        }
+        
+        #done {
+            height: 45px;  /* Reduced height */
+            width: 90px;   /* Reduced width */
+            font-size: medium; /* Slightly reduced font size */
+            border-radius: 70px;
+            background-color: black;
+            border: none;
+            color: white;
+            text-align: center;
+            transition: all 500ms;
+            margin-bottom: 20px;
+        }
+        
+        #done:hover {
+            transform: scale(1.1);
+            background-color: rgb(214, 127, 33);
+            color: white;
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0; /* Start as transparent */
+                transform: translateY(50px); /* Start slightly below */
+            }
+            100% {
+                opacity: 1; /* End as fully visible */
+                transform: translateY(0); /* End at the original position */
+            }
+        }
+
+    </style>
+    <nav>
+        <a href="#">
+        <div class="registerDiv">
+            <p class="registerLabel"><i class="fa-solid fa-chalkboard-user"></i><br></p></a>
+        </div>
+        
+
+        <a href="table.html">
+        <div class="scheduleDiv">
+            <p class="scheduleLabel"><i class="fa-solid fa-clipboard"></i><br></p></a>
+        </div>
+        
+    </nav>
+    <div class="registerContainer">
+        <div class="companyMotto">
+            <div class="second-container">
+                <h1 id="Heading">Journix</h1>
+                <h3>Turning Dreams into Destinations.</h3>
+                <div class="input-Container">
+                    <form>
+                        <div class="inputs">
+                            <label>Name</label>
+                            <br>
+                            <input type="text" placeholder="Surname, FirstName M.I" required>
+                            <br>
+                        </div>
+                        
+                        <div class="inputs">
+                            <label>Email</label>
+                            <br>
+                            <input type="email" placeholder="email@gmail.com" required>
+                            <br>
+                        </div>
+                        
+                        <div class="inputs">
+                            <label>Password</label>
+                            <br>
+                            <input type="password" placeholder="password" required>
+                            <br>
+                        </div>
+                        
+                        <div class="inputs">
+                            <label>Date of Birth</label>
+                            <br>
+                            <input type="date" required placeholder="mm/dd/yyyy">
+                        </div>
+                        
+                        <div id="submitButton">
+                            <Button id="done" type="submit">Submit</Button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer style="color: white; position:absolute; bottom: 0; margin-bottom:20px">© Made By Ian Lerald G. Montances</footer>
+    <script src="https://kit.fontawesome.com/8d84e31e5f.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
